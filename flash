@@ -42,7 +42,7 @@ fi
 
 ddsrc=$1
 dddest=$2
-maxtests=5
+maxtests=4
 
 if [[ ! -f $ddsrc ]]
 then
@@ -56,6 +56,7 @@ do
     if [[ ! -b $dddest ]]
     then
         echo "Trying to write $dddest (Attempt $i/$maxtests)"
+        sleep 1
     else
         echo "Writing via dd..."
         dd if=$ddsrc of=$dddest status=progress
